@@ -86,8 +86,4 @@ while True:
             for button in buttons:
                 if button['rect'].collidepoint(x,y):
                     doSomething(button)
-    pygame.display.update()            
-            
-            
-    
-    
+    pygame.display.update()

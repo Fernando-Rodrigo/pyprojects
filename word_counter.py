@@ -40,12 +40,9 @@ class Application(Frame):
         self.text1.delete("1.0", END)
         self.entry1.delete(0, END)
         
-                           
+
 root = Tk()
 root.title('Testing and Entry widget')
 root.geometry('900x700')
 app = Application(root)
 app.mainloop()
-        
-        
-        

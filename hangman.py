@@ -71,8 +71,7 @@ def displayBoard(HANGMANPICS, word, failed_guesses, correct_guesses):
     for x in range(0, len(word)):                 #if the current index letter is not in the correct_guesses list, replace with '_', to hide the letter
         if word[x] not in correct_guesses:
             currentWord = currentWord.replace(word[x], '_ ')
-    print(currentWord)   
-    
+    print(currentWord)
 
 def main():
     print("Hangman")
@@ -101,15 +100,3 @@ def main():
             failed_guesses += guess
             displayBoard(HANGMANPICS, word, failed_guesses, correct_guesses)
 main()        
-
-
-    
-    
-    
-
-
-
-
-
-        
-

@@ -11,12 +11,12 @@ class Application(Frame):
     
     def __init__(self,master):
         super(Application, self).__init__(master)
-        
+
         #self.create_widgets()
         self.playlistbox = Listbox(self, width = 40, height = 10, selectmode = SINGLE) #TODO: ---> BROWSE, MULTIPLE, EXTENDED (p.379)
         for song in playlist:
             self.playlistbox.insert(END, song)
-            
+
         self.grid(rowspan=5, columnspan=4)
         self.playlistbox.grid(row = 1)
         self.playButton = Button(self, text = 'Play', command = self.play)
@@ -26,7 +26,7 @@ class Application(Frame):
         self.loopButton.grid(row=4, column = 1)
         self.addButton.grid(row=4, column = 2)
         self.pack()
-        
+
         #pygame initialize
         pygame.init()
 
@@ -40,7 +40,6 @@ class Application(Frame):
             playIt = playlist[int(selectedSongs[0])]
             pygame.mixer.music.load(playIt)
             pygame.mixer.music.play(0, 0.0)
-            
 
     def loop(self):
         pygame.mixer.music.stop()
@@ -56,21 +55,9 @@ class Application(Frame):
             tempArray = song.split('/')     
             songShort = tempArray[len(tempArray)-1]
             self.playlistbox.insert(END, songShort)
-        
+
 root = Tk()
 root.title('Text Editor')
 root.geometry('500x200')
 app = Application(root)
 app.mainloop()
-          
-        
-
-    
-    
-    
-        
-        
-        
-        
-            
-                                   

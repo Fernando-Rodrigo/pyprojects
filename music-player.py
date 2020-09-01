@@ -43,7 +43,8 @@ class Application(Frame):
             pygame.mixer.music.load(playIt)
             pygame.mixer.music.play(0, 0.0)
 
-    def loop(self):
+    @staticmethod
+    def loop():
         pygame.mixer.music.stop()
         pygame.mixer.music.play(-1, 0.0)
 
@@ -53,7 +54,7 @@ class Application(Frame):
         songsList = list(songsTuple)  # convert to list
         # Add the full filename of songto playlist list, and a shortened version to the listBox
         for song in songsList:
-            playlist.append(song);
+            playlist.append(song)
             tempArray = song.split('/')
             songShort = tempArray[len(tempArray) - 1]
             self.playlistbox.insert(END, songShort)
